@@ -15,6 +15,7 @@ function readTransactionHash() {
 async function testTask5() {
   try {
     const tsHash = readTransactionHash();
+
     const transaction = await provider.getTransaction(tsHash);
     const transactionReceipt = await provider.getTransactionReceipt(tsHash);
 
@@ -26,11 +27,10 @@ async function testTask5() {
     const transactionInfo = {
       from: transaction.from,
       to: transaction.to,
-      value: transaction.value,
+      value: ethers.formatEther(transaction.value),
       blockNumber: transaction.blockNumber,
       gasLimit: transaction.gasLimit,
       gasPrice: transaction.gasPrice,
-      maxFeePerGas: transaction.maxFeePerGas,
       status: transactionReceipt.status,
     };
 
