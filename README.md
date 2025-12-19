@@ -26,6 +26,8 @@ ETH_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 npm start <transaction hash>
 ```
 
+The transaction hash can be obtained from a block explorer such as https://sepolia.etherscan.io
+
 ## EVM Transaction Lifecycle
 
 1. ##### Creation
